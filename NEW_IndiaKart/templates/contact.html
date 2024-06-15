@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contact-details">
+    <h1>Contact Us</h1>
+    <p>Phone: +91-7906116356</p>
+    <p>Email: <a href="mailto:amu.aman19@gmail.com">amu.aman19@gmail.com</a></p>
+    <p>Address: Hinjewadi Phase 3, Pune</p>
+    <div id="map"></div>
+</div>
+
+<script>
+    function initMap() {
+        var location = {lat: 18.591, lng: 73.741};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location
+        });
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+{% endblock %}

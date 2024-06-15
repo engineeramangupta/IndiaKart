@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiaKart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="IndiaKart Logo" class="logo" onclick="showLogoPopup()">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="showSuggestions(this.value)">
+            <button onclick="searchProduct()"><i class="fas fa-search"></i></button>
+        </div>
+        <ul id="suggestions-list"></ul>
+        <nav>
+            <a href="{{ url_for('signup') }}">Signup</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('orders') }}">My Orders</a>
+            <a href="{{ url_for('cart') }}">My Cart</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="popup" id="logoPopup">
+        <span class="close" onclick="closeLogoPopup()">&times;</span>
+        <img src="{{ url_for('static', filename='images/logo.jpeg') }}" alt="IndiaKart Logo">
+    </div>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 IndiaKart. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showLogoPopup() {
+            document.getElementById('logoPopup').style.display = 'block';
+        }
+
+        function closeLogoPopup() {
+            document.getElementById('logoPopup').style.display = 'none';
+        }
+
+        function searchProduct() {
+            var query = document.getElementById('search-bar').value;
+            window.location.href = '/search?query=' + query;
+        }
+
+        function showSuggestions(query) {
+            if (query.length == 0) {
+                document.getElementById('suggestions-list').innerHTML = '';
+                return;
+            }
+
+            fetch('/suggestions?query=' + query)
+                .then(response => response.json())
+                .then(data => {
+                    var suggestionsList = document.getElementById('suggestions-list');
+                    suggestionsList.innerHTML = '';
+                    data.suggestions.forEach(function(suggestion) {
+                        var listItem = document.createElement('li');
+                        listItem.textContent = suggestion;
+                        listItem.onclick = function() {
+                            document.getElementById('search-bar').value = suggestion;
+                            searchProduct();
+                        };
+                        suggestionsList.appendChild(listItem);
+                    });
+                });
+        }
+    </script>
+</body>
+</html>

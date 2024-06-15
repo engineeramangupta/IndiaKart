@@ -1,0 +1,22 @@
+[
+    {"name": "iPhone 13", "price": 79999, "image": "product.jpeg", "description": "Apple iPhone 13 with 128GB storage."},
+    {"name": "Laptop", "price": 49999, "image": "product.jpeg", "description": "15.6-inch laptop with 8GB RAM and 512GB SSD."},
+    {"name": "Shirts", "price": 999, "image": "product.jpeg", "description": "Pack of 3 cotton shirts."},
+    {"name": "Shoes", "price": 1999, "image": "product.jpeg", "description": "Comfortable running shoes."},
+    {"name": "Airpods", "price": 14999, "image": "product.jpeg", "description": "Apple Airpods Pro with active noise cancellation."},
+    {"name": "Jeans", "price": 1299, "image": "product.jpeg", "description": "Slim fit jeans for men."},
+    {"name": "TV", "price": 39999, "image": "product.jpeg", "description": "55-inch 4K Ultra HD Smart TV."},
+    {"name": "AC", "price": 29999, "image": "product.jpeg", "description": "1.5 Ton Split AC with inverter technology."},
+    {"name": "Smartwatch", "price": 19999, "image": "product.jpeg", "description": "Fitness smartwatch with heart rate monitor."},
+    {"name": "Camera", "price": 49999, "image": "product.jpeg", "description": "DSLR camera with 24.2MP sensor."},
+    {"name": "Headphones", "price": 2999, "image": "product.jpeg", "description": "Over-ear noise-cancelling headphones."},
+    {"name": "Tablet", "price": 24999, "image": "product.jpeg", "description": "10.4-inch tablet with 64GB storage."},
+    {"name": "Microwave", "price": 9999, "image": "product.jpeg", "description": "Convection microwave oven with 30L capacity."},
+    {"name": "Washing Machine", "price": 24999, "image": "product.jpeg", "description": "Front load washing machine with 7kg capacity."},
+    {"name": "Refrigerator", "price": 32999, "image": "product.jpeg", "description": "Double door refrigerator with 340L capacity."},
+    {"name": "Blender", "price": 1999, "image": "product.jpeg", "description": "High-speed blender for smoothies."},
+    {"name": "Gaming Console", "price": 39999, "image": "product.jpeg", "description": "Next-gen gaming console with 1TB storage."},
+    {"name": "Printer", "price": 7999, "image": "product.jpeg", "description": "All-in-one wireless printer."},
+    {"name": "Speaker", "price": 4999, "image": "product.jpeg", "description": "Portable Bluetooth speaker with 10-hour battery."},
+    {"name": "Desk Lamp", "price": 1499, "image": "product.jpeg", "description": "LED desk lamp with adjustable brightness."}
+]
